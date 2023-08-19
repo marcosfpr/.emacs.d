@@ -1,6 +1,7 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
 ;; Author: marcosfpr
+;; My Custom Emacs Settings
 
 ;; Send customize variables to separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -489,6 +490,7 @@
 ;; cargo install delta
 (use-package magit-delta
   :after magit
+  :hook (magit-mode . magit-delta-mode)
   :config
   (add-hook 'magit-mode-hook (lambda () (magit-delta-mode +1))))
 
