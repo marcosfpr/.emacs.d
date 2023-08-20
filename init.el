@@ -404,6 +404,9 @@
 
 (use-package dockerfile-mode)
 
+(use-package tex
+  :straight auctex)
+
 (use-package rustic
   :mode ("\\.rs$" . rustic-mode)
   :ensure
@@ -566,6 +569,9 @@
   (setq projectile-git-submodule-command nil)
   :bind (("C-c p f" . projectile-find-file)))
 
+(use-package pdf-tools)
+(pdf-tools-install)  ; Standard activation command
+(pdf-loader-install) ; On demand loading, leads to faster startup time
 
 (defun indent-region-custom(numSpaces)
     (progn
